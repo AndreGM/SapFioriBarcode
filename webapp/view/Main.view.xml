@@ -1,7 +1,7 @@
 <mvc:View controllerName="consultaprodutos.controller.Main"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="Pagina">
         <content>
             <FlexBox id="containerBusca" justifyContent="Center" >
                 <Input id="inpBusca" />
@@ -22,7 +22,7 @@
                             <Image id="imgProduto" src="{ModeloProduto>/product/image_front_url}" width="5rem" press="onClickImage"/>
                                 <VBox id="info">
                                     <ObjectAttribute id="categoria" title="Categoria" text="{ModeloProduto>/product/categories}"  />
-                                    <ObjectAttribute id="Score de Nutrição" title="Nutriscore" text="{ModeloProduto>/product/nutriscore_grade}" />
+                                    <ObjectAttribute id="scoreNutri" title="Nutriscore" text="{ModeloProduto>/product/nutriscore_grade}" />
                                 </VBox>
                         </HBox>
                     </content>
@@ -33,10 +33,18 @@
                             <Image id="imgProduto2" src="{ModeloProduto>/product/image_ingredients_url}" width="5rem" press="onClickImage"/>
                             <Table id="TabelaIngredientes" items="{ModeloProduto>/product/ingredients}">
                                 <columns>
-                                    <Column id="cdesc" header="Descricao" />
-                                    <Column id="cpmin" header="Porcentagem Mínima" />
-                                    <Column id="cpmax" header="Porcentagem Máx" />
-                                    <Column id="cpest" header="Porcentagem Estimada"/>
+                                    <Column id="cdesc" header="Descricao">
+                                            <Text id="textd" text="Descrição" />
+                                    </Column>
+                                    <Column id="cpmin" header="Porcentagem Mínima">
+                                        <Text id="pmin" text="Porcentagem Mínima" />
+                                    </Column>
+                                    <Column id="cpmax" header="Porcentagem Máx" >
+                                        <Text id="textpmax" text="Porcentagem Máxima" />
+                                    </Column>
+                                    <Column id="cpest" header="Porcentagem Estimada">
+                                        <Text id="textpest" text="Porcentagem Estimada" />
+                                    </Column>
                                 </columns>
                                 <items>
                                     <ColumnListItem id="itemsTabela">
