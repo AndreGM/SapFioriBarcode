@@ -27,7 +27,7 @@ sap.ui.define([
                 let valor =  input.getValue();
 
                 let parameters = {
-                    url : "https://world.openfoodfacts.org/api/v2/product/" + valor,
+                    url : "http://world.openfoodfacts.org/api/v2/product/" + valor,
                     method : "GET",
                     async : true,
                     crossDomain : true
